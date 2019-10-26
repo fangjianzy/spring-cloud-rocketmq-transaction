@@ -1,24 +1,23 @@
 server:
   port: 9001
 
+#jms配置
+name_server:
+  192.168.16.120:9876
+order_topic:
+  order_trans_topic
+
 #指定注册中心地址
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:7001/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 #服务的名称
 spring:
   application:
     name: order-service
-  #指定从哪个配置中心读取
-  cloud:
-    config:
-      discovery:
-        service-id: config-server-jdbc
-        enabled: true
-      profile: dev
-      label: dev
+  
 
 
 
